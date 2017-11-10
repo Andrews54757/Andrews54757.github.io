@@ -188,6 +188,20 @@ function fade(element, func) {
     }, 10);
 }
 
+function unfade(element, func, to) {
+    var op = 0.1; // initial opacity
+    element.style.display = to || 'block';
+    var timer = setInterval(function () {
+        if (op >= 1) {
+            clearInterval(timer);
+            if (func) func();
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 10);
+}
+
 function forEach(obj, call) {
     for (var i = 0; i < obj.length; i++) call(obj[i], i)
 }
@@ -198,5 +212,21 @@ forEach(a, (element) => {
         fade(maincontainer, function () {
             window.location.href = element.dataset.href;
         })
+    });
+})
+
+var currentContent = document.getElementById('main');
+forEach(document.getElementsByClassName('contentselect'), (element) => {
+    element.addEventListener('click', function () {
+        var sel = document.getElementById(element.dataset.id);
+        if (currentContent !== sel) {
+            var toFade = currentContent;
+            currentContent = sel;
+            fade(toFade, function () {
+                unfade(sel, function () {
+
+                })
+            })
+        }
     });
 })
