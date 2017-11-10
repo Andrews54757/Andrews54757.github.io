@@ -1,11 +1,16 @@
 body {
     overflow: hidden;
+    height: 100%;
 }
 
 
 /*
 Side menu: https://codepen.io/JFarrow/pen/fFrpg
 */
+
+#background {
+    background-color: #fbfbfb;
+}
 
 .fa-2x {
     font-size: 2em;
@@ -24,6 +29,7 @@ nav.sidebar.expanded {
     top: 0;
     bottom: 0;
     height: 100%;
+    z-index: 100;
     left: 0;
     width: 40px;
     overflow: hidden;
@@ -112,17 +118,11 @@ nav.sidebar li.active>a,
     src: local('Titillium WebLight'), local('TitilliumWeb-Light'), url(http://themes.googleusercontent.com/static/fonts/titilliumweb/v2/anMUvcNT0H1YN4FII8wpr24bNCNEoFTpS2BTjF6FB5E.woff) format('woff');
 }
 
-#content {
-    margin-left: 40px;
-    height: 98vh;
-    overflow: scroll;
+.title {
+    font-family: 'Lato';
+    margin-top: 30px;
+    color: #383838;
 }
-
-.wrap {
-    margin-top: 20px;
-}
-
-.title {}
 
 .center {
     text-align: center;
@@ -136,4 +136,64 @@ nav.sidebar li.active>a,
     padding: 0px;
     top: 0px;
     z-index: -100;
+}
+
+.content {
+    background-color: white;
+    margin-top: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: none;
+    min-height: 1000px;
+    opacity: .95;
+}
+
+.main {
+    display: block;
+}
+
+.wrap {
+    position: fixed;
+    overflow: scroll;
+    padding: 0px;
+    margin: 0px;
+    padding-left: 2.3%;
+    width: 100%;
+    height: 100%
+}
+
+#controls {
+    z-index: 100;
+    position: absolute;
+    right: 10px;
+    opacity: 0.1;
+    transition: .5s;
+    margin-top: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#controls:hover {
+    opacity: 1;
+}
+
+#controls i {
+    opacity: .8;
+    cursor: pointer;
+    line-height: 20px;
+    color: #707070;
+    font-size: 10px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.stickybottom {
+    margin-top: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #e2eeff;
+    text-align: center;
+    padding-top: 5px;
 }

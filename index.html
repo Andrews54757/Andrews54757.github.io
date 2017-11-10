@@ -8,77 +8,107 @@
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Titillium+Web:300">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css">
     <script src="js/pixi.js"></script>
 </head>
 
 <body>
-    <nav class="sidebar">
-        <ul>
-            <li>
-                <a href="#">
-                    <i class="fa fa-user-circle fa-2x nav-icon"></i>
-                    <span class="nav-text">
-                            Andrews54757
-                        </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-info-circle fa-2x nav-icon"></i>
-                    <span class="nav-text">
-                            About me
-                        </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-code fa-2x nav-icon"></i>
-                    <span class="nav-text">
-                            Programming Skills
-                        </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-folder-open fa-2x nav-icon"></i>
-                    <span class="nav-text">
-                            Projects
-                        </span>
-                </a>
-
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fa fa-file-picture-o fa-2x nav-icon"></i>
-                    <span class="nav-text">
-                            Gallery
-                        </span>
-                </a>
-
-            </li>
-        </ul>
-
-        <div class="bottom">
-            <ul class="github">
-                <li>
-                    <a href="#">
-                        <i class="fa fa-github fa-2x nav-icon"></i>
-                        <span class="nav-text">
-                            Github
-                        </span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
     <div id='background'>
 
     </div>
-    <div class='container clearfix wrap'>
-        <h1 class='center title'>Andrews54757</h1>
+    <div id='maincontainer'>
+        <nav class="sidebar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-user-circle fa-2x nav-icon"></i>
+                        <span class="nav-text">
+                            Andrews54757
+                        </span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-info-circle fa-2x nav-icon"></i>
+                        <span class="nav-text">
+                            About me
+                        </span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-code fa-2x nav-icon"></i>
+                        <span class="nav-text">
+                            Programming Skills
+                        </span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-folder-open fa-2x nav-icon"></i>
+                        <span class="nav-text">
+                            Projects
+                        </span>
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa fa-file-picture-o fa-2x nav-icon"></i>
+                        <span class="nav-text">
+                            Gallery
+                        </span>
+                    </a>
+
+                </li>
+            </ul>
+
+            <div class="bottom">
+                <ul class="github">
+                    <li>
+                        <a class='linkout' data-href="https://github.com/Andrews54757">
+                            <i class="fa fa-github fa-2x nav-icon"></i>
+                            <span class="nav-text">
+                            Github
+                        </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id='controls'>
+            <i id='play' class='fa fa-pause'></i>
+            <i id='stop' class='fa fa-stop'></i>
+        </div>
+
+        <div class='wrap'>
+            <div class='container clearfix'>
+                <h1 class='center title'>Andrews54757</h1>
+                <div id='main' class='content main'>
+
+                </div>
+                <div id='about' class='content'>
+
+                </div>
+                <div id='skills' class='content'>
+
+                </div>
+                <div id='projects' class='content'>
+
+                </div>
+                <div id='gallery' class='content'>
+
+                </div>
+                <div class='stickybottom'>
+                    Handmade with love by Andrews54757
+                    <br> Copyright © 2017 Andrew S
+                </div>
+            </div>
+        </div>
     </div>
     <script src='js/main.js'></script>
 </body>

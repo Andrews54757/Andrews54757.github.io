@@ -5,9 +5,9 @@ var renderOptions = {
     clearBeforeRender: true,
     roundPixels: true
 };
-
-var width = window.innerWidth,
-    height = window.innerHeight;
+var el = $('#background');
+var width = el.width(),
+    height = el.height();
 var half = (width / 2) - 50
 var lenX = Math.ceil(width / 100);
 var renderer = new PIXI.WebGLRenderer(width, height, renderOptions);
@@ -15,6 +15,16 @@ renderer.backgroundColor = 0xfbfbfb;
 element.appendChild(renderer.view);
 var stage = new PIXI.Container();
 var timestamp = Date.now();
+
+
+
+var sprite = PIXI.Sprite.fromImage('img/profile.png');
+sprite.anchor.set(.5, .5);
+sprite.position.set(width / 2, height / 2)
+sprite.width = sprite.height = 200;
+sprite.alpha = .5;
+stage.addChild(sprite);
+
 class Box {
     constructor(width, height, angle, velocity, i) {
         this.x = (i % lenX) * 100;
@@ -123,3 +133,70 @@ function render() {
 }
 
 render();
+
+
+var play = document.getElementById('play');
+var stop = document.getElementById('stop');
+
+var isPlaying = true,
+    hasStopped = false;
+play.addEventListener('click', function () {
+    if (hasStopped) {
+        play.className = 'fa fa-pause';
+        isPlaying = true;
+        hasStopped = false;
+        for (var i = 0; i < 100; i++) {
+            boxes.push(new Box(100, 100, 3.141 * 2 * Math.random(), 2, i))
+        }
+        render();
+    } else {
+        if (isPlaying) {
+            isPlaying = false;
+            play.className = 'fa fa-play';
+            clearTimeout(renderTime);
+        } else {
+            isPlaying = true;
+            render();
+            play.className = 'fa fa-pause';
+
+        }
+    }
+})
+
+stop.addEventListener('click', function () {
+    play.className = 'fa fa-play';
+    boxes.forEach((box) => {
+        stage.removeChild(box.graphics)
+    });
+    boxes = [];
+    renderer.render(stage)
+    hasStopped = true;
+    clearTimeout(renderTime);
+})
+
+function fade(element, func) {
+    var op = 1; // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1) {
+            clearInterval(timer);
+            element.style.display = 'none';
+            if (func) func();
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 10);
+}
+
+function forEach(obj, call) {
+    for (var i = 0; i < obj.length; i++) call(obj[i], i)
+}
+var maincontainer = document.getElementById('maincontainer');
+var a = document.getElementsByClassName('linkout')
+forEach(a, (element) => {
+    element.addEventListener('click', function () {
+        fade(maincontainer, function () {
+            window.location.href = element.dataset.href;
+        })
+    });
+})
