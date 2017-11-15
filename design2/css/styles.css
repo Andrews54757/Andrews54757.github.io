@@ -1,0 +1,97 @@
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #f7f7f7;
+    padding: 30px 50px 30px 50px;
+    line-height: 60px;
+    font-family: 'Arial';
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.navigation a:hover {
+    color: #c0d8d8;
+}
+
+.navigation nav {
+    display: inline-block;
+    float: right;
+}
+
+#logodiv {
+    margin-left: 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#logo img {
+    display: inline-block;
+    height: 50px;
+}
+
+#logo {
+    height: 60px;
+    padding-top: 5px;
+    display: inline-block;
+}
+
+#logoname {
+    display: inline-block;
+    opacity: 0;
+    max-width: 0px;
+    color: #e7d56f;
+    font-size: 30px;
+    font-family: 'Arial';
+    vertical-align: middle;
+}
+
+.background {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.back1 {
+    height: 500px;
+    background-image: url('../img/codeback.png');
+}
+
+.back2 {
+    height: 600px;
+    background-image: url('../img/profile.png');
+}
+
+.center {
+    text-align: center;
+}
+
+.content1 {
+    background-color: whitesmoke;
+}
+
+.title {
+    font-family: 'Arial';
+    color: #e7d56f;
+    padding-top: 90px;
+    font-size: 100px;
+    margin: 0px;
+}
+
+.title span {
+    color: #60b0f4
+}
+
+.title div {
+    color: white;
+    font-size: 40px;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}

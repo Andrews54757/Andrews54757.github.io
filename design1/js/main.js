@@ -26,11 +26,14 @@ sprite.alpha = .5;
 stage.addChild(sprite);
 
 class Box {
-    constructor(width, height, angle, velocity, i) {
+    constructor(w, h, angle, velocity, i) {
+
         this.x = (i % lenX) * 100;
         this.y = Math.floor(i / lenX) * 100;
-        this.width = width;
-        this.height = height;
+        //this.x = half;
+        //this.y = height / 2 - 50;
+        this.width = w;
+        this.height = h;
         this.angle = angle;
         this.velocity = velocity;
         this.goToLeft = false
@@ -38,7 +41,7 @@ class Box {
 
         rectangle.lineStyle(1, 0, 0.1);
 
-        rectangle.drawRect(0, 0, width, height);
+        rectangle.drawRect(0, 0, w, h);
         rectangle.endFill();
         rectangle.position.set(this.x, this.y)
         stage.addChild(rectangle);
@@ -51,6 +54,7 @@ class Box {
     goto(s) {
         this.velocity = 3;
         this.goToLeft = s;
+
     }
     update() {
         if (this.velocity > 1) {
@@ -127,8 +131,12 @@ function render() {
             rightSide[i].goto(true)
 
         }
-    }
+    } else {
 
+        boxes.forEach((box) => {
+            box.velocity = 1;
+        });
+    }
     renderer.render(stage);
 }
 
