@@ -43,6 +43,10 @@
     display: inline-block;
 }
 
+#fadein {
+    display: none;
+}
+
 #logoname {
     display: inline-block;
     opacity: 0;
@@ -61,7 +65,7 @@
 }
 
 .back1 {
-    height: 500px;
+    height: 600px;
     background-image: url('../img/codeback.png');
 }
 

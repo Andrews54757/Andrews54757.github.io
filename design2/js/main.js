@@ -71,3 +71,7 @@ $("#logodiv").click(function () {
         scrollTop: 0
     }, 700);
 });
+setTimeout(function () {
+
+    $('#fadein').fadeIn(750);
+}, 100)
