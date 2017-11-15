@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 1000;
     background: rgba(0, 0, 0, 0.6);
 }
 
@@ -76,7 +76,7 @@
 
 .back3 {
     height: 600px;
-    background-image: url('../img');
+    background-image: url('../img/recurse.png');
 }
 
 .center {
@@ -98,13 +98,13 @@
 
 .box {
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(188, 181, 255, .7);
     padding: 10px;
 }
 
 .textstyle1 {
     font-family: sans-serif;
-    color: #a06623;
+    font-family: 'Verdana';
 }
 
 .bottom {

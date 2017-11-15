@@ -51,6 +51,7 @@ nav.sidebar.expanded {
     font-size: 14px;
     text-decoration: none;
     transition: all .1s linear;
+    cursor: pointer;
 }
 
 .sidebar .nav-icon {
