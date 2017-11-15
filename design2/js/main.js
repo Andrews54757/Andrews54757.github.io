@@ -65,3 +65,9 @@ $window.scroll(function () {
 
 
 })
+
+$("#logodiv").click(function () {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 700);
+});

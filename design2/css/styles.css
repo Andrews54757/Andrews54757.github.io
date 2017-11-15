@@ -70,12 +70,42 @@
     background-image: url('../img/profile.png');
 }
 
+.back3 {
+    height: 600px;
+    background-image: url('../img');
+}
+
 .center {
     text-align: center;
 }
 
+.centerdiv {
+    margin: 0 auto;
+}
+
 .content1 {
     background-color: whitesmoke;
+}
+
+.content2 {
+    margin: 0px;
+    padding-top: 100px;
+}
+
+.box {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.textstyle1 {
+    font-family: sans-serif;
+    color: #a06623;
+}
+
+.bottom {
+    color: white;
+    background-color: black;
 }
 
 .title {
